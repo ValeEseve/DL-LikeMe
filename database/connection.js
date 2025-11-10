@@ -2,7 +2,6 @@ import pkg from "pg";
 import dotenv from "dotenv";
 dotenv.config();
 
-
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 
 export const { Pool } = pkg;
@@ -16,8 +15,8 @@ export const pool = new Pool({
 });
 
 try {
-await pool.query("SELECT NOW()");
-console.log("Database connected");
+  await pool.query("SELECT NOW()");
+  console.log("Database connected");
 } catch (error) {
-console.log(error);
+  console.log(error);
 }
